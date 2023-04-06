@@ -48,5 +48,5 @@ Dash is running on http://127.0.0.1:8050/
    Use a production WSGI server instead.
  * Debug mode: on
 ```
-
+![](https://github.com/yupest/dash-apps/blob/main/Geocoder/geocoder_example.gif?raw=true)
 
