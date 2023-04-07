@@ -1,6 +1,3 @@
-# dash-apps
-Apps by dash
-
 # Dash-apps
 
 Здесь будут выложены работы веб-приложений на основе Dash (python)
