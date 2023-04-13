@@ -131,13 +131,17 @@ def set_data(contents, filename):
 
     df = parse_contents(contents, filename)
     try:
-        dff = get_coords_places(df['name']).drop(columns = ['icon', 'licence'])
+        dff = get_coords_places(df['name'])
+        if 'icon' in dff.columns:
+            dff = dff.drop(columns = ['icon'])
+        if 'licence' in dff.columns:
+            dff = dff.drop(columns = ['licence'])
         dff = df.merge(dff, how = 'left', on = 'name')
         dff['boundingbox'] = dff['boundingbox'].astype(str)
         dataset = dff.to_json(orient='split', date_format='iso')
         return json.dumps(dataset)
-    except:
-        pass
+    except Exception as e:
+        print(e)
     
 if __name__ == "__main__":
     app.run_server(debug = True, use_reloader=False)
