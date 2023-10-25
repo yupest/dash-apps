@@ -1,0 +1,12 @@
+base64
+io
+json
+plotly
+numpy
+dash
+dash_daq
+pandas
+dash_draggable
+dash_bootstrap_components
+dash_holoniq_wordcloud
+Flask
