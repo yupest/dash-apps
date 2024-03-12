@@ -20,9 +20,11 @@ def geocode(query):
     return response
 
 def get_coords_places(places):
+    
     result = []
-    for i in places:
-        result.extend(geocode(i))
+    for i in list(set(places)):
+        if isinstance(i, str):
+            result.extend(geocode(i))
     return pd.DataFrame(result)
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -144,4 +146,4 @@ def set_data(contents, filename):
         print(e)
     
 if __name__ == "__main__":
-    app.run_server(debug = True, use_reloader=False)
+    app.run_server(debug = True)
